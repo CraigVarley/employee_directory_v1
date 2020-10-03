@@ -14,9 +14,9 @@ html {
     display: grid;
     grid-auto-rows:auto;
     grid-template-columns: 1fr;
-    row-gap: 15px;
-    column-gap: 5px;
+    grid-gap:15px;
     justify-items: center;
+    align-items: center;
 }
 
 @media (min-width: 768px) {
@@ -46,6 +46,10 @@ html {
     border-radius:5px;
 }
 
+.card:hover {
+    background-color:#f0f3f4;
+}
+
 .cardimage {
     width:100px;
 }
@@ -69,30 +73,114 @@ html {
 .cardtext p {
     font-size:small;
     margin:7px 0;
+    color: #797d7f;
 }
 
 /* EMPLOYEE OVERLAY  */
 
 #overlay {
-    display:none;
-    border:1px solid black;
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  background: rgba(100, 100, 100, 0.4);
+  height:100%;
+  z-index:2
+}
+
+#new-modal-html {
     position:fixed;
-    height:450px;
-    width:400px;
-    /* centers the div regardless of viewport size*/
+    height:400px;
+    width:350px;
     top: 45%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 5px;
+    transform: translate(-50%, -50%); 
+    z-index: 3;
     background-color: #fbfcfc;
+    opacity:1;
+    border-radius: 10px;
+}
+
+#overlay .card:hover {
+    background-color:#fbfcfc;
+}
+
+
+#overlay .cardtext,
+#overlay .cardimage {
+    margin-left:auto;
+    margin-right:auto;
 }
 
 #overlay .cardimage img {
     width:100px;
     height:100px;
     border-radius: 65%;
+    margin-top:10px;
 }
 
+#overlay h3 {
+    margin-top:10px;
+}
+
+#overlay .cardtext {
+    float: none;
+    color:#979a9a ;
+    font-size: medium;
+    margin-bottom: 5px;
+    text-align: center;
+}
+#overlay .cardtext p {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: medium;
+}
+
+#overlay #name {
+    color:black ;
+}
+
+#new-modal-html {
+    color: #979a9a ;
+}
+
+#new-modal-items {
+    text-align: center;
+}
+
+#close {
+    position: fixed;
+    right:0;    
+    margin-bottom:5px;
+    padding-right:10px;
+    transition: color 0.2s linear;
+}
+
+#close:hover {
+    color:black;
+}
+
+/* divider div in modal card for line and arrows*/
+
+#divider {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: space-around;
+}
+
+#divider hr {
+    width:75%;
+    color:darkgray;
+}
+
+#leftarrow,
+#rightarrow {
+    flex-basis: 10%;
+    margin:0px;
+    text-align:center;
+}
 
 /* OTHER ELEMENT STYLES */
 
@@ -106,4 +194,15 @@ h1 {
 
 h3 {
     margin-bottom:5px;
+}
+
+#search {
+    text-align: center;
+    margin-bottom: 25px;
+    margin-left:auto;
+    margin-right: auto;
+    border-radius: 5px;
+    width:200px;
+    height:30px;
+    border:1px solid lightgray;
 }
