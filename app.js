@@ -16,7 +16,7 @@ function fetchJson(url) {
 
 // call fetch and fill the div with the results
 fetchJson(url)
-    .then(employeeFill)
+    .then(data > console.log(data))
     .catch(error => console.log('Looks like there was an error', error))
 
 
