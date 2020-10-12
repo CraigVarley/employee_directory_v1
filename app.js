@@ -7,16 +7,16 @@ let employeeData=[];
 
 // ---------------- FIRST FETCH -------------------- //
 
-//basic fetch function
+// //basic fetch function
 function fetchJson(url) {
     return fetch(url)
         .then(checkStatus)
         .then(data => data.json())
 }
 
-// call fetch and fill the div with the results
+// // call fetch and fill the div with the results
 fetchJson(url)
-    .then(data > console.log(data))
+    .then(employeeFill)
     .catch(error => console.log('Looks like there was an error', error))
 
 
